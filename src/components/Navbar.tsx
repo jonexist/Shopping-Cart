@@ -19,7 +19,7 @@ const Navbar = () => {
           >
             {routes
               .filter(({ name }) =>
-                ['Home', 'Store', 'Collections'].includes(name)
+                ['Home', 'Store', 'Collection'].includes(name)
               )
               .map(({ id, path, name }) => (
                 <li key={id}>
@@ -38,7 +38,7 @@ const Navbar = () => {
         <ul className='menu menu-horizontal menu-md text-base space-x-4'>
           {routes
             .filter(({ name }) =>
-              ['Home', 'Store', 'Collections'].includes(name)
+              ['Home', 'Store', 'Collection'].includes(name)
             )
             .map(({ id, path, name }) => (
               <li key={id}>
