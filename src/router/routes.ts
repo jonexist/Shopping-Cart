@@ -11,8 +11,8 @@ export const routes: { id: number; path: string; name: string }[] = [
   },
   {
     id: 3,
-    path: 'collections',
-    name: 'Collections',
+    path: 'collection',
+    name: 'Collection',
   },
   {
     id: 4,
