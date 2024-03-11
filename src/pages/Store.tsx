@@ -17,7 +17,6 @@ type Items = {
 export const Store = () => {
   const [products, setProducts] = useState<Items[]>([]);
   const [loading, setLoading] = useState(true);
-  const [firtsVisit, setFirstVisit] = useState(false);
 
   useEffect(() => {
     const fetchStoreItem = async () => {
@@ -31,12 +30,6 @@ export const Store = () => {
         setProducts(data);
         setLoading(false);
       }
-      const visit = localStorage.getItem('first visit');
-      if (!visit) {
-        setFirstVisit(true);
-        localStorage.setItem('first visit', 'true');
-      }
-      setTimeout(() => setLoading(false), 2000);
     };
 
     fetchStoreItem();
@@ -45,7 +38,7 @@ export const Store = () => {
   return (
     <section className='min-h-screen p-7'>
       <div className='container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-20'>
-        {loading || firtsVisit
+        {loading
           ? [...Array(20)].map((_, index) => (
               <div key={index} className='flex flex-col gap-5'>
                 <div className='skeleton h-32 w-full'></div>
