@@ -6,12 +6,17 @@ export const routes: { id: number; path: string; name: string }[] = [
   },
   {
     id: 2,
-    path: '/store',
+    path: 'store',
     name: 'Store',
   },
   {
     id: 3,
-    path: '/features',
-    name: 'Features',
+    path: 'collections',
+    name: 'Collections',
+  },
+  {
+    id: 4,
+    path: 'cart',
+    name: 'Cart',
   },
 ];
