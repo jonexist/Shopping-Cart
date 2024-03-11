@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useShoppingCart } from '../context/useShoppingCart';
 import Logo from '../assets/Logo.svg';
+import { routes } from '../router/routes';
 import { ShoppingCart, Menu } from 'react-feather';
-// import { routes } from '../router/routes';
 
 const Navbar = () => {
   const { cartItems } = useShoppingCart();
@@ -17,28 +17,17 @@ const Navbar = () => {
             tabIndex={0}
             className='menu menu-md dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
           >
-            <li>
-              <NavLink to='/' className='font-medium text-sm uppercase'>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='store' className='font-medium text-sm uppercase'>
-                Store
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='Features' className='font-medium text-sm uppercase'>
-                Features
-              </NavLink>
-            </li>
-            {/* {routes.map(({ id, path, name }) => (
-              <li key={id}>
-                <NavLink to={path} className='font-medium text-sm uppercase'>
-                  <span className='font-medium text-sm uppercase'>{name}</span>
-                </NavLink>
-              </li>
-            ))} */}
+            {routes
+              .filter(({ name }) =>
+                ['Home', 'Store', 'Collections'].includes(name)
+              )
+              .map(({ id, path, name }) => (
+                <li key={id}>
+                  <NavLink to={path} className='font-medium text-sm uppercase'>
+                    {name}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </div>
         <NavLink to='/'>
@@ -47,28 +36,17 @@ const Navbar = () => {
       </div>
       <div className='navbar-center hidden lg:flex'>
         <ul className='menu menu-horizontal menu-md text-base space-x-4'>
-          <li>
-            <NavLink to='/' className='font-medium text-sm uppercase'>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='store' className='font-medium text-sm uppercase'>
-              Store
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='Features' className='font-medium text-sm uppercase'>
-              Features
-            </NavLink>
-          </li>
-          {/* {routes.map(({ id, path, name }) => (
-            <li key={id}>
-              <NavLink to={path}>
-                <span className='font-medium text-sm uppercase'>{name}</span>
-              </NavLink>
-            </li>
-          ))} */}
+          {routes
+            .filter(({ name }) =>
+              ['Home', 'Store', 'Collections'].includes(name)
+            )
+            .map(({ id, path, name }) => (
+              <li key={id}>
+                <NavLink to={path} className='font-medium text-sm uppercase'>
+                  {name}
+                </NavLink>
+              </li>
+            ))}
         </ul>
       </div>
       <div className='flex-none'>
