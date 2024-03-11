@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import { Home } from './pages/Home';
 import { Store } from './pages/Store';
-import { Features } from './pages/Features';
+import { Collections } from './pages/Collection';
 import { Footer } from './components/Footer';
 import { Cart } from './pages/Cart';
 
@@ -15,7 +15,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='store' element={<Store />} />
-          <Route path='features' element={<Features />} />
+          <Route path='collections' element={<Collections />} />
           <Route path='cart' element={<Cart />} />
         </Routes>
       </main>
