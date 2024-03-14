@@ -22,7 +22,7 @@ export const HeroSection = () => {
               selection of products across all categories, from fashion and
               electronics to home essentials, all in one convenient location.
             </p>
-            <NavLink to='/store' className='btn btn-secondary'>
+            <NavLink to='/store' className='btn btn-secondary rounded-md w-44'>
               Shop Now
             </NavLink>
           </div>
