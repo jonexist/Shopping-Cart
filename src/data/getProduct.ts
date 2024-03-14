@@ -12,7 +12,7 @@ type Product = {
 
 export const getProduct = async (): Promise<Product[] | []> => {
   try {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/products`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
