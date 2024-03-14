@@ -15,9 +15,13 @@ export const Cart = () => {
       if (localStorageData) {
         setProducts(JSON.parse(localStorageData));
       } else {
-        const data = await getProduct();
-        localStorage.setItem('cart products', JSON.stringify(data));
-        setProducts(data);
+        try {
+          const data = await getProduct();
+          localStorage.setItem('cart products', JSON.stringify(data));
+          setProducts(data);
+        } catch (error) {
+          console.error('Error fetching products', error);
+        }
       }
     };
     fetchProducts();
