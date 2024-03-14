@@ -1,7 +1,7 @@
-import { AboutSection } from '../components/AboutSection';
-import { HeroSection } from '../components/HeroSection';
-import { ReviewSection } from '../components/ReviewSection';
-import { TrustedSection } from '../components/TrustedSection';
+import { HeroSection } from '../components/Home/HeroSection';
+import { AboutSection } from '../components/Home/AboutSection';
+import { TrustedSection } from '../components/Home/TrustedSection';
+import { ReviewSection } from '../components/Home/ReviewSection';
 import { data } from '../data/dummyData';
 import { review } from '../data/dummyReview';
 

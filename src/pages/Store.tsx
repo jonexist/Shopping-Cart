@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getProduct } from '../data/getProduct';
-import { ProductCard } from '../components/ProductCard';
+import { ProductCard } from '../components/Store/ProductCard';
 
 type Items = {
   id: number;

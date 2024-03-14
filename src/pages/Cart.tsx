@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CartItem, Product } from '../components/CartItem';
+import { CartItem, Product } from '../components/Cart/CartItem';
 import { getProduct } from '../data/getProduct';
 import { useShoppingCart } from '../context/useShoppingCart';
 import { formatCurrency } from '../utilities/formatCurrency';
