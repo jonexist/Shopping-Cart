@@ -14,7 +14,7 @@ type Items = {
   };
 };
 
-export const Store = () => {
+export const Store = (): JSX.Element => {
   const [products, setProducts] = useState<Items[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -25,10 +25,15 @@ export const Store = () => {
         setProducts(JSON.parse(storage));
         setLoading(false);
       } else {
-        const data = await getProduct();
-        localStorage.setItem('store products', JSON.stringify(data));
-        setProducts(data);
-        setLoading(false);
+        try {
+          const data = await getProduct();
+          localStorage.setItem('store products', JSON.stringify(data));
+          setProducts(data);
+          setLoading(false);
+        } catch (error) {
+          console.error('Failed to fetch products: ', error);
+          setLoading(false);
+        }
       }
     };
 
