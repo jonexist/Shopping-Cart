@@ -1,7 +1,7 @@
 export const data = [
   {
     title: 'Total Sales',
-    value: `$${4.8}M`,
+    value: 4.8,
   },
   {
     title: 'Official Addons',
